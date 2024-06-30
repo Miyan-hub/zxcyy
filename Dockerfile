@@ -14,4 +14,6 @@ RUN npm install && npm install qrcode-terminal
 
 COPY . .
 
-CMD ["node", "index.js", "--server"]
+RUN npm start
+
+CMD ["npm", "start"]
