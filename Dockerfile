@@ -14,6 +14,4 @@ RUN npm install && npm install qrcode-terminal
 
 COPY . .
 
-RUN npm start
-
-CMD ["npm", "start"]
+ENTRYPOINT ["npm", "start"]
