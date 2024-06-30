@@ -8,12 +8,8 @@ RUN apt-get update && \
   apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
 
-COPY package.json .
-
-RUN npm install && npm install qrcode-terminal
-
 COPY . .
 
-EXPOSE 8000
+RUN npm install && npm install qrcode-terminal
 
 CMD ["node", "index.js", "--server"]
