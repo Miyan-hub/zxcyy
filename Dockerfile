@@ -1,4 +1,4 @@
-FROM node:lts-buster
+FROM node:22
 
 RUN apt-get update && \
   apt-get install -y \
@@ -10,6 +10,6 @@ RUN apt-get update && \
 
 COPY . .
 
-RUN npm install && npm install qrcode-terminal
-
-CMD ["node", "index.js", "--server"]
+RUN npm install
+EXPOSE 8080
+CMD [ "node", "index.js" ]
